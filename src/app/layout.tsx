@@ -3,6 +3,7 @@ import "~/styles/globals.css";
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 
+import { Suspense } from "react";
 import PostHogPageView from "~/posthog/posthog.pageview";
 import { PHProvider } from "~/posthog/posthog.provider";
 import { TRPCReactProvider } from "~/trpc/react";
@@ -20,7 +21,9 @@ export default function RootLayout({
     <html lang="en" className={`${GeistSans.variable}`}>
       <body>
         <PHProvider>
-          <PostHogPageView />
+          <Suspense>
+            <PostHogPageView />
+          </Suspense>
           <TRPCReactProvider>{children}</TRPCReactProvider>
         </PHProvider>
       </body>
