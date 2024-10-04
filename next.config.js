@@ -4,16 +4,7 @@
  */
 await import("./src/env.js");
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  crossOrigin: "anonymous",
-  productionBrowserSourceMaps: true,
-  reactStrictMode: true,
+/** @type {import("next").NextConfig} */
+const config = {};
 
-  experimental: {
-    typedRoutes: true,
-    useLightningcss: true,
-  },
-};
-
-export default nextConfig;
+export default config;
